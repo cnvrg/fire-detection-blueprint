@@ -5,7 +5,11 @@ import numpy as np
 import base64
 import pathlib
 import os
-
+import sys
+scripts_dir = pathlib.Path(__file__).parent.resolve()
+sys.path.append(str(scripts_dir))
+from prerun import download_model_files
+download_model_files()
 
 if os.path.exists('/input/train'):
     model_path = '/input/train/model.h5'
